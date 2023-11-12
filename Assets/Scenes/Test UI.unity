@@ -615,6 +615,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1471086508}
+        m_TargetAssemblyTypeName: EnemyDestroy, Assembly-CSharp
+        m_MethodName: LoadBoom
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &352042870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -986,6 +998,7 @@ GameObject:
   - component: {fileID: 824490180}
   - component: {fileID: 824490179}
   - component: {fileID: 824490178}
+  - component: {fileID: 824490183}
   m_Layer: 0
   m_Name: 250Enemy
   m_TagString: Untagged
@@ -1086,6 +1099,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &824490183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824490177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f03a351b6663b541b0fb14071efedfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boom: {fileID: 6149101567857351851, guid: 46c8170160488e142b78afb03a51794a, type: 3}
+  spawn: {fileID: 824490182}
 --- !u!1 &871272333
 GameObject:
   m_ObjectHideFlags: 0
@@ -1233,6 +1260,7 @@ GameObject:
   - component: {fileID: 1018316949}
   - component: {fileID: 1018316948}
   - component: {fileID: 1018316947}
+  - component: {fileID: 1018316952}
   m_Layer: 0
   m_Name: 2500Enemy
   m_TagString: Untagged
@@ -1333,6 +1361,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1018316952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1018316946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f03a351b6663b541b0fb14071efedfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boom: {fileID: 6149101567857351851, guid: 46c8170160488e142b78afb03a51794a, type: 3}
+  spawn: {fileID: 1018316951}
 --- !u!1 &1021409692
 GameObject:
   m_ObjectHideFlags: 0
@@ -1987,6 +2029,7 @@ GameObject:
   - component: {fileID: 1471086505}
   - component: {fileID: 1471086504}
   - component: {fileID: 1471086503}
+  - component: {fileID: 1471086508}
   m_Layer: 0
   m_Name: 100Enemy
   m_TagString: Untagged
@@ -2087,6 +2130,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1471086508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471086502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f03a351b6663b541b0fb14071efedfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boom: {fileID: 6149101567857351851, guid: 46c8170160488e142b78afb03a51794a, type: 3}
+  spawn: {fileID: 1471086507}
 --- !u!1 &1701039455
 GameObject:
   m_ObjectHideFlags: 0
@@ -2186,6 +2243,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1018316947}
         m_TargetAssemblyTypeName: SpawnText, Assembly-CSharp
         m_MethodName: LoadText
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1018316952}
+        m_TargetAssemblyTypeName: EnemyDestroy, Assembly-CSharp
+        m_MethodName: LoadBoom
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2709,6 +2778,18 @@ MonoBehaviour:
       - m_Target: {fileID: 824490178}
         m_TargetAssemblyTypeName: SpawnText, Assembly-CSharp
         m_MethodName: LoadText
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 824490183}
+        m_TargetAssemblyTypeName: EnemyDestroy, Assembly-CSharp
+        m_MethodName: LoadBoom
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
