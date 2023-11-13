@@ -17,6 +17,8 @@ public class GunManager : MonoBehaviour
         _inputManager = FindObjectOfType<PlayerInput>();
 
         _shoot = _inputManager.actions["Activate"];
+
+        FindObjectOfType<MusicManager>().Play("OST");
     }
 
     private void Update()
