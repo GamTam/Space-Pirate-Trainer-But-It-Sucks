@@ -8,22 +8,33 @@ public class GunManager : MonoBehaviour
 {
     [SerializeField] private BulletController _bulletPrefab;
     [SerializeField] private Transform _spawnPoint;
+    [SerializeField] private float _fireSpeed = 0.1f;
 
-    private PlayerInput _inputManager;
+    private float _fireTimer;
+    [SerializeField] private PlayerInput _inputManager;
     private InputAction _shoot;
+    private InputAction _shootHeld;
 
     private void Start()
     {
-        _inputManager = FindObjectOfType<PlayerInput>();
-
         _shoot = _inputManager.actions["Activate"];
+        _shootHeld = _inputManager.actions["Activate Value"];
 
         FindObjectOfType<MusicManager>().Play("OST");
     }
 
     private void Update()
     {
-        if (_shoot.triggered) Shoot();
+        if (_shootHeld.ReadValue<float>() > 0.5f || _shoot.triggered)
+        {
+            _fireTimer += Time.deltaTime;
+
+            if (_fireTimer >= _fireSpeed || _shoot.triggered)
+            {
+                _fireTimer = 0f;
+                Shoot();
+            }
+        }
     }
 
     [Button()]

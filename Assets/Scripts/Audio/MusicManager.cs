@@ -51,7 +51,6 @@ public class MusicManager : MonoBehaviour
     public void setPoint()
     {
         currentPoint = musicPlaying.source.time;
-        Debug.Log(currentPoint);
     }
 
     public void goToPoint()
@@ -69,6 +68,7 @@ public class MusicManager : MonoBehaviour
 
     public Music Play (string name, float point=0, bool dontStopPreviousSong=false)
     {
+        Debug.Log("a");
         Music s = allMusic.Find(x => x.name == name);
         if (s == null) return null;
 
