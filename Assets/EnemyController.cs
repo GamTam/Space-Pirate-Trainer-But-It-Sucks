@@ -32,27 +32,28 @@ public class EnemyController : MonoBehaviour
 
         int num = Random.Range(0, 10000);
 
-        if (num <= _bulletChance)
+        if (num <= _bulletChance && IsVisible(Camera.main, this.gameObject))
         {
             GameObject obj = Instantiate(_bullet);
             obj.transform.position = transform.position + (transform.forward * 2);
             obj.transform.rotation = transform.rotation;
             obj.SetActive(true);
-        } else if (num <= _bulletChance && !_canFire)
-        {
-            Debug.Log("Failed to fire gun :(");
         }
     }
     
-    void OnBecameVisible()
+    private bool IsVisible(Camera c, GameObject target)
     {
-        Debug.Log("Can Now fire gun");
-        _canFire = true;
-    }
-    
-    void OnBecameInvisible()
-    {
-        _canFire = false;
+        var planes = GeometryUtility.CalculateFrustumPlanes(c);
+        var point = target.transform.position;
+
+        foreach (var plane in planes)
+        {
+            if (plane.GetDistanceToPoint(point)< 0)
+            {
+                return false;
+            }
+        }
+        return true;
     }
     
     private void OnCollisionEnter(Collision collision)

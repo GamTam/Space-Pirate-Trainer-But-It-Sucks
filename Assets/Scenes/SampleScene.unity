@@ -176,8 +176,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.55, y: 3.55, z: 3.38}
-  m_Center: {x: 0, y: 0, z: -1.46}
+  m_Size: {x: 3.76, y: 4.41, z: 3.38}
+  m_Center: {x: 0, y: 0, z: -1.31}
 --- !u!1 &60765618
 GameObject:
   m_ObjectHideFlags: 0
@@ -1845,6 +1845,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LabGroupShield
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2f4f0a0952f7afb428abbc0dedda4749,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f4f0a0952f7afb428abbc0dedda4749, type: 3}
 --- !u!4 &685402778 stripped
@@ -2470,7 +2475,7 @@ SphereCollider:
   m_GameObject: {fileID: 963194225}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.15
   m_Center: {x: 0, y: 0, z: 0}
@@ -3213,6 +3218,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LabGroupShield
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2f4f0a0952f7afb428abbc0dedda4749,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f4f0a0952f7afb428abbc0dedda4749, type: 3}
 --- !u!4 &1780810405 stripped
@@ -3773,7 +3783,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 3219126ff76dcaa46937e31a55dec128,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3219126ff76dcaa46937e31a55dec128, type: 3}
@@ -4135,8 +4145,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.55, y: 3.55, z: 3.38}
-  m_Center: {x: 0, y: 0, z: -1.46}
+  m_Size: {x: 3.76, y: 4.41, z: 3.38}
+  m_Center: {x: 0, y: 0, z: -1.31}
 --- !u!1 &1989984318
 GameObject:
   m_ObjectHideFlags: 0
@@ -4545,7 +4555,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 3219126ff76dcaa46937e31a55dec128,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3219126ff76dcaa46937e31a55dec128, type: 3}
