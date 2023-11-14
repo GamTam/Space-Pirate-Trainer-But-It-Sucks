@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using NaughtyAttributes;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private float _radius;
     [SerializeField] [MinMaxSlider(0, 10f)] private Vector2 _spawnFrequency;
-    [SerializeField] GameObject _enemy;
+    [FormerlySerializedAs("_enemy")] [SerializeField] GameObject[] _enemies;
     [SerializeField] TMP_Text _scoreText;
 
     private float _spawnTimer;
@@ -35,7 +36,7 @@ public class EnemySpawner : MonoBehaviour
     [Button()]
     public void SpawnEnemy()
     {
-        GameObject obj = Instantiate(_enemy);
+        GameObject obj = Instantiate(_enemies[Random.Range(0, _enemies.Length)]);
         do
         {
             obj.transform.position = Random.onUnitSphere * Random.Range(_radius * 0.75f, _radius * 1.5f);

@@ -8,6 +8,8 @@ public class EnemyController : MonoBehaviour
 {
     [SerializeField] private GameObject _explosion;
     [SerializeField] private GameObject _scoreObj;
+    [SerializeField] private GameObject _bullet;
+    [SerializeField] private float _bulletChance;
     [SerializeField] private Transform _player;
     [SerializeField] private float _speed;
     [SerializeField] private float _score;
@@ -26,6 +28,16 @@ public class EnemyController : MonoBehaviour
         transform.RotateAround(_player.position, new Vector3(0, 1, 0), _speed * Time.deltaTime);
         
         transform.LookAt(_player);
+
+        int num = Random.Range(0, 10000);
+
+        if (num > _bulletChance)
+        {
+            GameObject obj = Instantiate(_bullet);
+            obj.transform.position = transform.position + (transform.forward * 2);
+            obj.transform.rotation = transform.rotation;
+            obj.SetActive(true);
+        }
     }
     
     private void OnCollisionEnter(Collision collision)
@@ -46,7 +58,6 @@ public class EnemyController : MonoBehaviour
             obj.transform.rotation = transform.rotation;
             
             Destroy(gameObject);
-            Destroy(collision.transform.parent.gameObject);
         }
     }
 }
