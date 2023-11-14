@@ -9,6 +9,8 @@ public static class Globals
     public static MusicManager MusicManager;
     public static SoundManager SoundManager;
 
+    public static int score = 0;
+
     public static Dictionary<string, ArrayList> LoadTSV(string file) {
         
         Dictionary<string, ArrayList> dictionary = new Dictionary<string, ArrayList>();

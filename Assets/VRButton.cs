@@ -10,10 +10,12 @@ public class VRButton : Button
     
     private BoxCollider _collider;
     private float _coolDownTimer;
+    private Animator _anim;
 
     void Start()
     {
         _collider = GetComponent<BoxCollider>();
+        _anim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -27,6 +29,7 @@ public class VRButton : Button
         {
             _coolDownTimer = _coolDownTime;
             Destroy(collision.transform.parent.gameObject);
+            _anim.Play("Pressed", 0, 0);
             onClick.Invoke();
         }
     }
