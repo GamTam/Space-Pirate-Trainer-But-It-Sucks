@@ -15,6 +15,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float _score;
     [SerializeField] private bool _lookAtPlayer;
     private SphereCollider _col;
+    private bool _canFire;
 
     private void Start()
     {
@@ -31,13 +32,27 @@ public class EnemyController : MonoBehaviour
 
         int num = Random.Range(0, 10000);
 
-        if (num > _bulletChance)
+        if (num <= _bulletChance)
         {
             GameObject obj = Instantiate(_bullet);
             obj.transform.position = transform.position + (transform.forward * 2);
             obj.transform.rotation = transform.rotation;
             obj.SetActive(true);
+        } else if (num <= _bulletChance && !_canFire)
+        {
+            Debug.Log("Failed to fire gun :(");
         }
+    }
+    
+    void OnBecameVisible()
+    {
+        Debug.Log("Can Now fire gun");
+        _canFire = true;
+    }
+    
+    void OnBecameInvisible()
+    {
+        _canFire = false;
     }
     
     private void OnCollisionEnter(Collision collision)
@@ -54,7 +69,7 @@ public class EnemyController : MonoBehaviour
             Globals.score += score;
             
             obj.GetComponent<TextLife>().Text.text = $"+{score}";
-            obj.transform.position = transform.position;
+            obj.transform.position = transform.position + (transform.forward);
             obj.transform.rotation = transform.rotation;
             
             Destroy(gameObject);
